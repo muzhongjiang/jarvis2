@@ -19,53 +19,53 @@
 	</properties>
 
 
-    <scm>
-        <connection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</connection>
-        <developerConnection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</developerConnection>
-        <url>http://gitlab.mogujie.org/bigdata/jarvis2.git</url>
-        <tag>head</tag>
-    </scm>
+<!--    <scm>-->
+<!--        <connection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</connection>-->
+<!--        <developerConnection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</developerConnection>-->
+<!--        <url>http://gitlab.mogujie.org/bigdata/jarvis2.git</url>-->
+<!--        <tag>head</tag>-->
+<!--    </scm>-->
 
 
-    <repositories>
-        <repository>
-            <id>client-public</id>
-            <name>public</name>
-            <url>http://maven.mogujie.org/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>client-public</id>-->
+<!--            <name>public</name>-->
+<!--            <url>http://maven.mogujie.org/nexus/content/groups/public/</url>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
 
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>client-plugin</id>
-            <url>http://maven.mogujie.org/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+<!--    </repositories>-->
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>client-plugin</id>-->
+<!--            <url>http://maven.mogujie.org/nexus/content/groups/public/</url>-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
 
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://maven.mogujie.org/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://maven.mogujie.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>releases</id>-->
+<!--            <name>Nexus Release Repository</name>-->
+<!--            <url>http://maven.mogujie.org/nexus/content/repositories/releases/</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>snapshots</id>-->
+<!--            <name>Nexus Snapshot Repository</name>-->
+<!--            <url>http://maven.mogujie.org/nexus/content/repositories/snapshots/</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
 
 
     <dependencies>

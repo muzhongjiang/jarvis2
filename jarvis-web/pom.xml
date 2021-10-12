@@ -24,60 +24,60 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.mogu.bigdata</groupId>
-            <artifactId>admin-client</artifactId>
-            <version>2.0.4-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.mogu.bigdata</groupId>-->
+<!--            <artifactId>admin-client</artifactId>-->
+<!--            <version>2.0.4-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!---->
+<!--        <dependency>-->
+<!--            <groupId>com.mogu.bigdata</groupId>-->
+<!--            <artifactId>admin-passport</artifactId>-->
+<!--            <version>2.0.4-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.mogu.bigdata</groupId>-->
+<!--            <artifactId>admin-view-jsp</artifactId>-->
+<!--            <version>2.0.4-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.mogu.bigdata</groupId>
-            <artifactId>admin-passport</artifactId>
-            <version>2.0.4-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.mogu.bigdata</groupId>
-            <artifactId>admin-view-jsp</artifactId>
-            <version>2.0.4-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.mogujie.ppcenter</groupId>-->
+<!--            <artifactId>sdk</artifactId>-->
+<!--            <version>1.0.2-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.mogujie.ppcenter</groupId>
-            <artifactId>sdk</artifactId>
-            <version>1.0.2-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.mogujie.tesla</groupId>-->
+<!--            <artifactId>tesla-spring-bootstrap</artifactId>-->
+<!--            <version>1.1.6-SNAPSHOT</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>ch.qos.logback</groupId>-->
+<!--                    <artifactId>logback-core</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>ch.qos.logback</groupId>-->
+<!--                    <artifactId>logback-classic</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.mogujie.tesla</groupId>
-            <artifactId>tesla-spring-bootstrap</artifactId>
-            <version>1.1.6-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.mogujie.tesla</groupId>
-            <artifactId>tesla-spring-server</artifactId>
-            <version>1.1.6-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.mogujie.tesla</groupId>-->
+<!--            <artifactId>tesla-spring-server</artifactId>-->
+<!--            <version>1.1.6-SNAPSHOT</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>ch.qos.logback</groupId>-->
+<!--                    <artifactId>logback-core</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>ch.qos.logback</groupId>-->
+<!--                    <artifactId>logback-classic</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.mogujie.jarvis</groupId>
@@ -91,11 +91,11 @@
             <version>${jarvis2.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.mogujie.bigdata.base</groupId>
-            <artifactId>bigdata-utils</artifactId>
-            <version>0.0.19</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.mogujie.bigdata.base</groupId>-->
+<!--            <artifactId>bigdata-utils</artifactId>-->
+<!--            <version>0.0.19</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>
