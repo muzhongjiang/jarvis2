@@ -12,6 +12,7 @@ import com.mogujie.jarvis.server.guice4test.Injectors4Test;
 import com.mogujie.jarvis.server.service.TaskService;
 import com.mogujie.jarvis.server.util.FutureUtils;
 import com.typesafe.config.Config;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,8 @@ import static org.junit.Assert.*;
 public class TestTaskRetryActorWithMain {
     static TaskService taskService = Injectors4Test.getInjector().getInstance(TaskService.class);
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         AppAuthProtos.AppAuth appAuth = AppAuthProtos.AppAuth.newBuilder().setToken("11111").setName("jarvis-web").build();
         String actorPath = TestJarvisConstants.TEST_SERVER_ACTOR_PATH;
         Config akkaConfig = ConfigUtils.getAkkaConfig("akka-test.conf");

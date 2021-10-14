@@ -69,6 +69,9 @@ public abstract class AbstractController {
             return null;
         }
 
+        //timeout
+        LOGGER.info("actor="+actor.pathString()+", "+actor);
+        LOGGER.info("request="+request);
         Future<Object> future = Patterns.ask(actor, request, timeout);
         GeneratedMessage response = (GeneratedMessage) Await.result(future, timeout.duration());
         return response;

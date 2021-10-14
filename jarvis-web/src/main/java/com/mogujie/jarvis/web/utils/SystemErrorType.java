@@ -1,6 +1,8 @@
 package com.mogujie.jarvis.web.utils;
 
-import com.mogujie.bigdata.base.StringUtils;
+//import com.mogujie.bigdata.base.StringUtils;
+
+import org.apache.commons.lang.StringUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

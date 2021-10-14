@@ -28,7 +28,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <nav>
                 <ol class="cd-breadcrumb triangle">
                     <li><a href="${contextPath}/">首页</a></li>
@@ -103,7 +103,7 @@
                         <div class="row top-buffer">
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="input-group" style="width:100%">
-                                    <span class="input-group-addon" style="width:35%">Worker Group
+                                    <span class="input-group-addon" style="width:35%">Worker Group1
                                         <span class="text-danger" style="vertical-align: middle">*</span>
                                     </span>
                                     <select id="workerGroupId" desc="Worker Group"  data-submitType="number"></select>

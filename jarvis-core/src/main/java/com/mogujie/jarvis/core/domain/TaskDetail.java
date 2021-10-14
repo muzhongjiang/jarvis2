@@ -8,11 +8,11 @@
 
 package com.mogujie.jarvis.core.domain;
 
-import java.util.Map;
-import java.util.Objects;
-
+import lombok.Data;
 import org.joda.time.DateTime;
 
+import java.util.Map;
+@Data
 public final class TaskDetail {
 
     private String fullId;
@@ -34,103 +34,6 @@ public final class TaskDetail {
     private TaskDetail() {
     }
 
-    public boolean isChanged() {
-        return isChanged;
-    }
-
-    public void setChanged(boolean isChanged) {
-        this.isChanged = isChanged;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getFullId() {
-        return fullId;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public String getAppName() {
-        return appName;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public String getJobType() {
-        return jobType;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public int getPriority() {
-        return priority;
-    }
-
-    public int getGroupId() {
-        return groupId;
-    }
-
-    public Map<String, Object> getParameters() {
-        return parameters;
-    }
-
-    public DateTime getScheduleTime() {
-        return scheduleTime;
-    }
-
-    public DateTime getDataTime() {
-        return dataTime;
-    }
-
-    public int getExpiredTime() {
-        return expiredTime;
-    }
-
-    public int getFailedRetries() {
-        return failedRetries;
-    }
-
-    public int getFailedInterval() {
-        return failedInterval;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fullId, taskName, appName, user, jobType, content, priority, groupId, parameters, expiredTime, scheduleTime, dataTime,
-                failedRetries, failedInterval);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-
-        if (obj instanceof TaskDetail) {
-            TaskDetail other = (TaskDetail) obj;
-            return Objects.equals(fullId, other.fullId) && Objects.equals(taskName, other.taskName) && Objects.equals(appName, other.appName)
-                    && Objects.equals(user, other.user) && Objects.equals(jobType, other.jobType) && Objects.equals(content, other.content)
-                    && Objects.equals(priority, other.priority) && Objects.equals(groupId, other.groupId)
-                    && Objects.equals(parameters, other.parameters) && Objects.equals(expiredTime, other.expiredTime)
-                    && Objects.equals(scheduleTime, other.scheduleTime) && Objects.equals(dataTime, other.dataTime)
-                    && Objects.equals(failedRetries, other.failedRetries) && Objects.equals(failedInterval, other.failedInterval);
-
-        }
-
-        return false;
-    }
 
     public static TaskDetailBuilder newTaskDetailBuilder() {
         return new TaskDetailBuilder();

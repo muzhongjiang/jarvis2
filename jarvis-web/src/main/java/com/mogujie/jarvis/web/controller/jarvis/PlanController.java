@@ -1,6 +1,6 @@
 package com.mogujie.jarvis.web.controller.jarvis;
 
-import com.mogu.bigdata.admin.client.annotation.Passport;
+//import com.mogu.bigdata.admin.client.annotation.Passport;
 import com.mogujie.jarvis.core.util.JsonHelper;
 import com.mogujie.jarvis.web.auth.conf.JarvisAuthType;
 import com.mogujie.jarvis.web.entity.qo.PlanQo;
@@ -32,7 +32,7 @@ public class PlanController {
      * 执行计划首页
      */
     @RequestMapping
-    @Passport(JarvisAuthType.plan)
+//    @Passport(JarvisAuthType.plan)
     public String index(ModelMap modelMap) {
         PlanQo planQo = new PlanQo();
         planQo.setScheduleDate(DateTime.now().toString("yyyy-MM-dd"));
@@ -41,7 +41,7 @@ public class PlanController {
     }
 
     @RequestMapping("detail")
-    @Passport(JarvisAuthType.plan)
+//    @Passport(JarvisAuthType.plan)
     public String detail(ModelMap modelMap,Long jobId,Long scheduleTime) {
         modelMap.put("jobId",jobId);
         modelMap.put("scheduleTime",scheduleTime);

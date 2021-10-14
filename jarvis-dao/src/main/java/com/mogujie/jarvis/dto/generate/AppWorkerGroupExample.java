@@ -6,7 +6,6 @@ import java.util.List;
 
 public class AppWorkerGroupExample {
     protected String orderByClause;
-
     protected boolean distinct;
 
     protected java.util.List<Criteria> oredCriteria;

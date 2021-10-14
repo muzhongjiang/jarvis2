@@ -31,13 +31,14 @@ import com.typesafe.config.Config;
 
 import akka.actor.ActorSelection;
 import akka.actor.ActorSystem;
+import org.junit.Test;
 
 /**
  * Location www.mogujie.com
  * Created by qinghuo on 16/2/2.
  * used by jarvis-parent
  */
-public class SubmitJobWithDenpendcy {
+public class TestSubmitJobWithDenpendcy {
 
     /**
      * 验证在有依赖时候
@@ -45,10 +46,9 @@ public class SubmitJobWithDenpendcy {
      * A   B
      * \  /
      * C
-     *
-     * @param args
      */
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         Thread threadCheck;
 
         TaskService taskService = Injectors4Test.getInjector().getInstance(TaskService.class);
@@ -59,7 +59,7 @@ public class SubmitJobWithDenpendcy {
         String actorPath = TestJarvisConstants.TEST_SERVER_ACTOR_PATH;
         ActorSelection serverActor = system.actorSelection(actorPath);
         DateTime now = DateTime.now();
-        SubmitJobWithDenpendcy submitJobWithDenpendcy = new SubmitJobWithDenpendcy();
+        TestSubmitJobWithDenpendcy submitJobWithDenpendcy = new TestSubmitJobWithDenpendcy();
 
         long jobA = submitJobWithDenpendcy.submitJob(serverActor, 1, appAuth, "hive", "show databases;", now, false, 0L, 0L);
         long jobB = submitJobWithDenpendcy.submitJob(serverActor, 1, appAuth, "shell", "ls;", now, false, 0L, 0L);

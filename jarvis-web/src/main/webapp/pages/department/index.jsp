@@ -10,7 +10,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <nav>
         <ol class="cd-breadcrumb triangle">
           <li><a href="${contextPath}/">首页</a></li>
@@ -73,10 +73,7 @@
           </div>
         </div>
       </div>
-
-
     </div>
-
   </div>
 
   <hr>
@@ -84,7 +81,7 @@
   <div class="row top-buffer">
     <div class="col-md-12">
       <div id="toolbar">
-        <a class="btn btn-primary" href="${contextPath}/department/add" target="_blank">新增部门</a>
+        <a class="btn btn-primary" href="${contextPath}/department/add">新增部门</a>
       </div>
       <table id="content" data-toolbar="#toolbar">
 

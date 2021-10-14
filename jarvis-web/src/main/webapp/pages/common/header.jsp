@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="admin" uri="http://bda.mogujie.org/admin" %>
+<%--<%@ taglib prefix="admin" uri="http://bda.mogujie.org/admin" %>--%>
 <c:set var="contextPath" scope="application" value="<%=request.getContextPath()%>" />
 
 <!doctype html>
@@ -29,32 +29,55 @@
     <link type="text/css" rel="stylesheet" href="${contextPath}/assets/plugins/bootstrap-table/bootstrap-table.min.css" />
     <link type="text/css" rel="stylesheet" href="${contextPath}/assets/css/select2_special.css" />
     <link type="text/css" rel="stylesheet" href="${contextPath}/assets/plugins/jstree/3.2.1/themes/default/style.min.css" />
-
-
-
     <script src="${contextPath}/assets/plugins/modernizr/modernizr.js" type="application/javascript" charset="utf-8"></script>
     <script src="${contextPath}/assets/plugins/jquery/jquery-2.1.4.min.js" type="application/javascript" charset="utf-8"></script>
 
 
     <script>
         var contextPath = "${contextPath}";
+        function skip() {
+            var v = $("#manager").val();
+            window.location.href = "${contextPath}/pages/manage/"+v;
+        }
     </script>
-    <title>调度系统 - 蘑菇街</title>
+    <title>muse</title>
 </head>
 <body>
 <header>
 
-  <div id="cd-logo" class="bdmenu">
-    <ul>
-      <li class="active">
-        <a  href="${contextPath}/">${platformName}</a>
-      </li>
-    </ul>
-  </div>
-
+  <%--<div id="cd-logo" class="bdmenu">--%>
+    <%--<ul>--%>
+      <%--<li class="active">--%>
+        <%--<a  href="${contextPath}/">${platformName}</a>--%>
+      <%--</li>--%>
+    <%--</ul>--%>
+  <%--</div>--%>
 
     <nav id="cd-top-nav" class="navbar">
-        ${admin:menus(__menus, contextPath)}
+        <%--${admin:menus(__menus, contextPath)}--%>
+            <ul>
+                <li><a href="${contextPath}/pages/dashboard/index.jsp">我的任务</a></li>
+                <li><a href="${contextPath}/pages/job/index.jsp">任务管理</a></li>
+                <li><a href="${contextPath}/pages/task/index.jsp">执行流水</a></li>
+                <li><a href="${contextPath}/pages/plan/index.jsp">执行计划</a></li>
+                <li><a href="${contextPath}/pages/trigger/index.jsp">重跑任务</a></li>
+                <li><a href="${contextPath}/pages/operation/index.jsp">操作记录</a></li>
+                <li><a href="${contextPath}/pages/department/index.jsp">部门管理</a></li>
+                <%--<li><a href="${contextPath}/pages/manage/bizGroup.jsp">业务类型管理</a></li>--%>
+                <%--<li><a href="${contextPath}/pages/manage/app.jsp">应用管理</a></li>--%>
+                <%--<li><a href="${contextPath}/pages/manage/worker.jsp">Worker管理</a></li>--%>
+                <%--<li><a href="${contextPath}/pages/manage/system.jsp">调度系统管理</a></li>--%>
+                <li>
+                    <select onchange="skip()" id="manager" style="background-color: rgb(49, 53, 61);color: white;border: hidden;">
+                        <option value="app.jsp" style="color:white; background-color: rgb(49, 53, 61)">后台管理</option>
+                        <option value="app.jsp" style="color:white; background-color: rgb(49, 53, 61)">应用管理</option>
+                        <option value="bizGroup.jsp" style="color:white;background-color: rgb(49, 53, 61)">业务类型管理</option>
+                        <option value="worker.jsp" style="color:white;background-color: rgb(49, 53, 61)">Worker管理</option>
+                        <option value="system.jsp" style="color:white;background-color: rgb(49, 53, 61)">调度系统管理</option>
+
+                    </select>
+                </li>
+            </ul>
     </nav>
 
     <c:choose>
@@ -73,4 +96,4 @@
 
 </header>
 
-<main class="cd-main-content">
+<%--<main class="cd-main-content">--%>

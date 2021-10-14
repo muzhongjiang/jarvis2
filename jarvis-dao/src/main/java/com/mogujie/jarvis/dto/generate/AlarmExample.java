@@ -1,39 +1,21 @@
 package com.mogujie.jarvis.dto.generate;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Data
 public class AlarmExample {
+
     protected String orderByClause;
-
     protected boolean distinct;
-
-    protected java.util.List<Criteria> oredCriteria;
+    protected List<Criteria> oredCriteria;
 
     public AlarmExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<>();
     }
 
-    public void setOrderByClause(String orderByClause) {
-        this.orderByClause = orderByClause;
-    }
-
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
-    public void setDistinct(boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    public boolean isDistinct() {
-        return distinct;
-    }
-
-    public java.util.List<Criteria> getOredCriteria() {
-        return oredCriteria;
-    }
 
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
@@ -69,7 +51,7 @@ public class AlarmExample {
 
         protected GeneratedCriteria() {
             super();
-            criteria = new ArrayList<Criterion>();
+            criteria = new ArrayList<>();
         }
 
         public boolean isValid() {
@@ -80,7 +62,7 @@ public class AlarmExample {
             return criteria;
         }
 
-        public java.util.List<Criterion> getCriteria() {
+        public List<Criterion> getCriteria() {
             return criteria;
         }
 

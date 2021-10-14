@@ -296,7 +296,7 @@ var columns = [{
     checkbox: true
 }, {
     field: 'jobId',
-    title: '任务id',
+    title: '任务',
     sortable: true,
     switchable: true
 }, {
@@ -465,7 +465,7 @@ function operateFormatter(value, row, index) {
 
     if (appId == jobAppId) {
         var edit = [
-            '<a  href="' + contextPath + '/job/addOrEdit?jobId=' + jobId + '" title="编辑任务信息" target="_blank">',
+            '<a  href="' + contextPath + '/job/addOrEdit?jobId=' + jobId + '" title="编辑任务信息">',
             '<i class="glyphicon glyphicon-edit"></i>编辑',
             '</a>  '
         ].join('');
@@ -511,7 +511,8 @@ function bizGroupFormatter(value, row, index) {
 }
 
 function jobNameFormatter(value, row, index) {
-    var result = '<a target="_blank" href="' + contextPath + "/job/detail?jobId=" + row["jobId"] + '">' + value + '</a>';
+    // var result = '<a target="_blank" href="' + contextPath + "/job/detail?jobId=" + row["jobId"] + '">' + value + '</a>';
+    var result = '<a href="' + contextPath + "/job/detail?jobId=" + row["jobId"] + '">' + value + '</a>';
     return result;
 }
 

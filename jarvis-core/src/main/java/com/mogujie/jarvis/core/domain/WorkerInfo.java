@@ -7,10 +7,10 @@
  */
 package com.mogujie.jarvis.core.domain;
 
-import java.util.Objects;
-
 import com.mogujie.jarvis.core.JarvisConstants;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode
 public class WorkerInfo {
 
     private String ip;
@@ -57,28 +57,6 @@ public class WorkerInfo {
         return getAkkaRootPath() + JarvisConstants.WORKER_AKKA_USER_PATH;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(ip, port);
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        WorkerInfo other = (WorkerInfo) obj;
-        return Objects.equals(ip, other.ip) && Objects.equals(port, other.port);
-    }
-
-    @Override
-    public String toString() {
-        return getAkkaRootPath();
-    }
 
 }

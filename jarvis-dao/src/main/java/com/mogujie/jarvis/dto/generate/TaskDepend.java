@@ -1,7 +1,10 @@
 package com.mogujie.jarvis.dto.generate;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class TaskDepend {
     private Long taskId;
 
@@ -11,35 +14,4 @@ public class TaskDepend {
 
     private String childTaskIds;
 
-    public Long getTaskId() {
-        return taskId;
-    }
-
-    public void setTaskId(Long taskId) {
-        this.taskId = taskId;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public String getDependTaskIds() {
-        return dependTaskIds;
-    }
-
-    public void setDependTaskIds(String dependTaskIds) {
-        this.dependTaskIds = dependTaskIds;
-    }
-
-    public String getChildTaskIds() {
-        return childTaskIds;
-    }
-
-    public void setChildTaskIds(String childTaskIds) {
-        this.childTaskIds = childTaskIds;
-    }
 }

@@ -10,7 +10,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <nav>
         <ol class="cd-breadcrumb triangle">
           <li><a href="${contextPath}/">首页</a></li>
@@ -102,13 +102,9 @@
   <div class="row top-buffer">
     <div class="col-md-12">
       <table id="content" data-toolbar="#toolBar">
-
       </table>
-
     </div>
-
   </div>
-
 </div>
 
 <jsp:include page="../common/footer.jsp">

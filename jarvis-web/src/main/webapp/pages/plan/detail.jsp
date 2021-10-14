@@ -24,7 +24,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <nav>
                 <ol class="cd-breadcrumb triangle">
                     <li><a href="${contextPath}/">首页</a></li>
@@ -33,11 +33,12 @@
                 </ol>
             </nav>
         </div>
-        <div class="col-md-6 top-buffer">
+        <div class="col-md-6 top-buffer" style="margin-top: 70px;">
             <span class="h3 pull-right">
                 <span>
                     <strong>
-                        <a id="jobDetail" class="text-info" target="_blank"></a>
+                        <%--<a id="jobDetail" class="text-info" target="_blank"></a>--%>
+                        <a id="jobDetail" class="text-info"></a>
                     </strong>
                 </span> 的计划详情
             </span>

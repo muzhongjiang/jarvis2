@@ -18,18 +18,18 @@
 
     <mvc:annotation-driven/>
 
-    <mvc:interceptors>
+<!--    <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean class="com.mogu.bigdata.admin.passport.interceptor.RequestInterceptor"/>
         </mvc:interceptor>
-    </mvc:interceptors>
+    </mvc:interceptors>-->
 
 
-    <import resource="classpath*:META-INF/admin/production/rbac-beans.xml"/>
+    <!--<import resource="classpath*:META-INF/admin/production/rbac-beans.xml"/>-->
 
 
-    <import resource="classpath*:META-INF/admin/production/menu-beans.xml"/>
+    <!--<import resource="classpath*:META-INF/admin/production/menu-beans.xml"/>-->
 
 
 
@@ -38,7 +38,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="handlerExceptionResolver" class="com.mogu.bigdata.admin.passport.support.http.GlobalExceptionResolver"/>
+    <!--<bean id="handlerExceptionResolver" class="com.mogu.bigdata.admin.passport.support.http.GlobalExceptionResolver"/>-->
     <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="utf-8"/>

@@ -252,12 +252,19 @@ public class HiveScriptParamUtils {
     }
 
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
+
+        String str = "dwd_usr_users_${YTD(-1,yyyyMMdd 00:00:00)} ;${YTD(0)}";
 
         String text;
 
         DateTime today = DateTime.now();
-        text = parse("where paytime >= unix_timestamp('$MGD(-1M, yyyy-MM-dd 00:00:00)')",today);
+        today = new DateTime("2017-09-16T01:15:15.000+08:00");
+        System.out.println("===="+parse(str, today));
+
+        text = parse("where paytime >= unix_timestamp('$MGD(-1d, yyyy-MM-dd 00:00:00)')",today);
+        System.out.println("============="+parse(text, today));
+
 
         System.out.println(parse(
                 " dwd_usr_users_${YTD(-1,yyyy-MM-dd)}    from dwd_usr_users_${YTD(-1)} a left outer join (select userid,min(realname) realname,min(province) province, min(city) city,min(area) area,min(address) address"

@@ -7,15 +7,14 @@
  */
 package com.mogujie.jarvis.core.expression.cron;
 
-import java.text.ParseException;
-import java.util.HashSet;
-import java.util.Set;
-
+import com.google.common.base.CharMatcher;
+import com.google.common.collect.Range;
 import org.joda.time.DateTime;
 import org.joda.time.MutableDateTime;
 
-import com.google.common.base.CharMatcher;
-import com.google.common.collect.Range;
+import java.text.ParseException;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author wuya
@@ -36,7 +35,7 @@ public class SingleParser extends AbstractParser {
 
     @Override
     public boolean matches(String cronFieldExp) throws ParseException {
-        if (CharMatcher.DIGIT.matchesAllOf(cronFieldExp)) {
+        if (CharMatcher.digit().matchesAllOf(cronFieldExp)) {
             int value = Integer.parseInt(cronFieldExp);
             if (range.contains(value)) {
                 set.add(value);

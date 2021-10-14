@@ -7,7 +7,7 @@
   </select>
 
   <select id="selectByScriptTitle" parameterType="string" resultType="com.mogujie.jarvis.dto.generate.Job">
-    SELECT * FROM job where contentType=2 and content=(SELECT id FROM ironman.script where title=#{title} limit 0,1) limit 0,1
+    SELECT * FROM job where contentType=2 and content=(SELECT id FROM script where title=#{title} limit 0,1) limit 0,1
   </select>
 
 </mapper>

@@ -1,6 +1,6 @@
 package com.mogujie.jarvis.web.controller.jarvis;
 
-import com.mogu.bigdata.admin.client.annotation.Passport;
+//import com.mogu.bigdata.admin.client.annotation.Passport;
 import com.mogujie.jarvis.core.util.JsonHelper;
 import com.mogujie.jarvis.web.auth.conf.JarvisAuthType;
 import com.mogujie.jarvis.web.entity.qo.JobDependQo;
@@ -53,7 +53,7 @@ public class JobController {
      * job任务管理首页
      */
     @RequestMapping
-    @Passport(JarvisAuthType.job)
+//    @Passport(JarvisAuthType.job)
     public String index(ModelMap modelMap) {
         modelMap.put("app", app);
         return "job/index";
@@ -64,7 +64,7 @@ public class JobController {
      * job任务详情页面
      */
     @RequestMapping(value = "detail")
-    @Passport(JarvisAuthType.job)
+//    @Passport(JarvisAuthType.job)
     public String detail(ModelMap modelMap, Long jobId) {
         JobVo jobVo = jobService.getJobById(jobId);
         if (jobVo == null) {
@@ -78,7 +78,7 @@ public class JobController {
      * job依赖
      */
     @RequestMapping(value = "dependency")
-    @Passport(JarvisAuthType.job)
+//    @Passport(JarvisAuthType.job)
     public String dependency(ModelMap modelMap, JobDependQo query) {
 
         Long jobId = query.getJobId();
@@ -103,7 +103,7 @@ public class JobController {
      * job任务新增或编辑页
      */
     @RequestMapping(value = "addOrEdit")
-    @Passport(JarvisAuthType.job)
+//    @Passport(JarvisAuthType.job)
     public String addOrEdit(ModelMap modelMap, Long jobId) {
         modelMap.put("app", app);
         modelMap.put("jobId", jobId);

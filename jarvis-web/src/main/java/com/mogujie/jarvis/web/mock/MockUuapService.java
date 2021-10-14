@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author 鸣人(mingren@mogujie.com)
  * @version 1.0 @16-3-21 上午11:41
  */
-public class MockUuapService implements UuapService {
+public class MockUuapService /*implements UuapService*/ {
 
     public static final Result<User> mockUser = new Result<User>();
 
@@ -34,13 +34,13 @@ public class MockUuapService implements UuapService {
         user.setUname("ceshi");
     }
 
-    @Override
+//    @Override
     public User authenticate(HttpServletRequest request, HttpServletResponse response, String uname, String password) throws PassportException {
 
         return user;
     }
 
-    @Override
+//    @Override
     public void logout(HttpServletRequest request, HttpServletResponse response) throws PassportException {
 
     }

@@ -4,7 +4,7 @@
 
     <!--不返回content,避免返回数据太多-->
     <select id="queryScript" parameterType="String" resultType="ScriptVo">
-      SELECT id, title, creator FROM ironman.script
+      SELECT id, title, creator FROM script
       WHERE
           status = 0
           <if test="_parameter!=null and _parameter!=''">
@@ -17,7 +17,7 @@
         SELECT
           id, title, creator,content
         FROM
-          ironman.script
+          script
         WHERE
           id = ${id}
         limit 1

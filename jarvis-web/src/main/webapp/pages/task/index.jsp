@@ -16,7 +16,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <nav>
                 <ol class="cd-breadcrumb triangle">
                     <li><a href="${contextPath}/">首页</a></li>
@@ -176,7 +176,8 @@
 </jsp:include>
 
 <script type="text/javascript">
-    var taskQo = ${taskQo};
+    <%--var taskQo = ${taskQo};--%>
+    var taskQo = 42600;
 </script>
 
 <script type="text/javascript" src="${contextPath}/assets/js/jarvis/task/task.js"></script>

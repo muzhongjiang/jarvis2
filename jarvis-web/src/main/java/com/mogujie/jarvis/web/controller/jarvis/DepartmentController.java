@@ -1,6 +1,6 @@
 package com.mogujie.jarvis.web.controller.jarvis;
 
-import com.mogu.bigdata.admin.client.annotation.Passport;
+//import com.mogu.bigdata.admin.client.annotation.Passport;
 import com.mogujie.jarvis.core.util.JsonHelper;
 import com.mogujie.jarvis.web.auth.conf.JarvisAuthType;
 import com.mogujie.jarvis.web.entity.vo.DepartmentAndBizGroupVo;
@@ -27,7 +27,7 @@ public class DepartmentController {
   @Autowired
   private DepartmentMapper departmentMapper;
   @RequestMapping
-  @Passport(JarvisAuthType.department)
+//  @Passport(JarvisAuthType.department)
   public String index(ModelMap modelMap) {
     return "department/index";
   }
@@ -36,14 +36,14 @@ public class DepartmentController {
    * job任务新增或编辑页
    */
   @RequestMapping(value = "add")
-  @Passport(JarvisAuthType.department)
+//  @Passport(JarvisAuthType.department)
   public String addOrEdit(ModelMap modelMap) {
     return "department/add";
   }
 
   //单个业务类型详情
   @RequestMapping(value = "departmentDetail")
-  @Passport(JarvisAuthType.department)
+//  @Passport(JarvisAuthType.department)
   public String departmentDetail(ModelMap modelMap, Long id){
     List<DepartmentAndBizGroupVo> list = this.departmentMapper.getDepartmentById(id);
     if(list == null) {

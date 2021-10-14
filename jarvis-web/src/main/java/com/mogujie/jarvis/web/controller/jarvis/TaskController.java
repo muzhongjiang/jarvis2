@@ -1,6 +1,6 @@
 package com.mogujie.jarvis.web.controller.jarvis;
 
-import com.mogu.bigdata.admin.client.annotation.Passport;
+//import com.mogu.bigdata.admin.client.annotation.Passport;
 import com.mogujie.jarvis.core.util.JsonHelper;
 import com.mogujie.jarvis.web.auth.conf.JarvisAuthType;
 import com.mogujie.jarvis.web.entity.qo.TaskDependQo;
@@ -35,7 +35,7 @@ public class TaskController {
     Logger logger = Logger.getLogger(this.getClass());
 
     @RequestMapping
-    @Passport(JarvisAuthType.task)
+//    @Passport(JarvisAuthType.task)
     public String index(ModelMap modelMap, TaskQo taskQo) {
 
         modelMap.put("taskQo", JsonHelper.toJson(taskQo));
@@ -43,7 +43,7 @@ public class TaskController {
     }
 
     @RequestMapping(value = "detail")
-    @Passport(JarvisAuthType.task)
+//    @Passport(JarvisAuthType.task)
     public String dependency(ModelMap modelMap, Long taskId, Integer debug) {
         TaskVo taskVo = taskService.getTaskById(taskId);
         Long jobId = taskVo.getJobId();
@@ -62,7 +62,7 @@ public class TaskController {
         taskQo.setLimit(30);
 
         Map<String, Object> result = taskService.getTasks(taskQo);
-        logger.info("result:" + result);
+//        logger.info("result:" + result);
         List<TaskVo> taskVoList = (List<TaskVo>) result.get("rows");
 
         try {

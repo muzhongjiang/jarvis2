@@ -8,24 +8,19 @@
 
 package com.mogujie.jarvis.core.expression;
 
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.joda.time.DateTime;
-import org.joda.time.IllegalFieldValueException;
-import org.joda.time.Months;
-import org.joda.time.MutableDateTime;
-import org.joda.time.Years;
-import org.joda.time.format.DateTimeFormat;
-
 import com.google.common.base.CharMatcher;
 import com.google.common.collect.BoundType;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Range;
 import com.mogujie.jarvis.core.JarvisConstants;
 import com.mogujie.jarvis.core.util.DurationFieldTypes;
+import org.joda.time.*;
+import org.joda.time.format.DateTimeFormat;
+
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Provides a parser and evaluator for timeOffset dependency expressions, such as "['yyyy-MM-dd 00:00:00',d(-1),d(1))".
@@ -103,7 +98,7 @@ public class TimeOffsetExpression extends DependencyExpression {
             char unit = m.group(1).charAt(0);
             String strValue = m.group(2);
             int value = 0;
-            if (CharMatcher.DIGIT.matchesAllOf(strValue)) {
+            if (CharMatcher.digit().matchesAllOf(strValue)) {
                 value = Integer.parseInt(strValue);
             } else {
                 value = Integer.parseInt(mutableDateTime.toString(strValue));

@@ -80,7 +80,10 @@ public class JarvisServer {
 
             Configuration config = ConfigUtils.getServerConfig();
             int serverActorNum = config.getInt(ServerConigKeys.SERVER_ACTOR_NUM, 500);
-            system.actorOf(ServerActor.props().withRouter(new RoundRobinPool(serverActorNum)), JarvisConstants.SERVER_AKKA_SYSTEM_NAME);
+            system.actorOf(
+                    ServerActor.props().withRouter(new RoundRobinPool(serverActorNum)),
+                    JarvisConstants.SERVER_AKKA_SYSTEM_NAME
+            );
 
             LOGGER.info("start dispatcher...");
             int taskDispatcherThreads = config.getInt(ServerConigKeys.SERVER_DISPATCHER_THREADS, 5);

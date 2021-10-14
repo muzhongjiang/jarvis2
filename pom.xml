@@ -18,14 +18,14 @@
         <skipTests>true</skipTests>
 	</properties>
 
-
-<!--    <scm>-->
-<!--        <connection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</connection>-->
-<!--        <developerConnection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</developerConnection>-->
-<!--        <url>http://gitlab.mogujie.org/bigdata/jarvis2.git</url>-->
-<!--        <tag>head</tag>-->
-<!--    </scm>-->
-
+<!--
+    <scm>
+        <connection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</connection>
+        <developerConnection>scm:git:http://gitlab.mogujie.org/bigdata/jarvis2.git</developerConnection>
+        <url>http://gitlab.mogujie.org/bigdata/jarvis2.git</url>
+        <tag>head</tag>
+    </scm>
+-->
 
 <!--    <repositories>-->
 <!--        <repository>-->
@@ -39,7 +39,6 @@
 <!--                <enabled>true</enabled>-->
 <!--            </snapshots>-->
 <!--        </repository>-->
-
 <!--    </repositories>-->
 <!--    <pluginRepositories>-->
 <!--        <pluginRepository>-->
@@ -96,15 +95,32 @@
 			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>19.0</version>
-		</dependency>
-		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+
+
+
+		<!--增加jar：-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.7.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.0-jre</version>
+		</dependency>
+
+		<!--test：-->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

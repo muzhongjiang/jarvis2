@@ -7,32 +7,18 @@
  */
 package com.mogujie.jarvis.core.expression;
 
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-
-import org.joda.time.DateTime;
-import org.joda.time.MutableDateTime;
-
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.Range;
-import com.mogujie.jarvis.core.expression.cron.AbstractParser;
+import com.mogujie.jarvis.core.expression.cron.*;
 import com.mogujie.jarvis.core.expression.cron.AbstractParser.DurationField;
-import com.mogujie.jarvis.core.expression.cron.AsteriskParser;
-import com.mogujie.jarvis.core.expression.cron.LastDayOfMonthParser;
-import com.mogujie.jarvis.core.expression.cron.MonthAbbreviationParser;
-import com.mogujie.jarvis.core.expression.cron.NearestWeekdayOfMonthParser;
-import com.mogujie.jarvis.core.expression.cron.PoundSignParser;
-import com.mogujie.jarvis.core.expression.cron.RangeParser;
-import com.mogujie.jarvis.core.expression.cron.SingleParser;
-import com.mogujie.jarvis.core.expression.cron.StepParser;
-import com.mogujie.jarvis.core.expression.cron.WeekAbbreviationParser;
+import org.joda.time.DateTime;
+import org.joda.time.MutableDateTime;
+
+import java.text.ParseException;
+import java.util.*;
 
 /**
  * Provides a parser and evaluator for unix-like cron expressions, such as "0 0 12 * * ?".
@@ -115,7 +101,7 @@ public class CronExpression extends ScheduleExpression {
             throw new ParseException("'?' can only be specfied for day-of-month or day-of-week.", -1);
         } else if (!"?".equals(exp[DurationField.DAY_OF_MONTH.getIndex()]) && !"?".equals(exp[DurationField.DAY_OF_WEEK.getIndex()])) {
             throw new ParseException("Support for specifying both a day-of-week and a day-of-month parameter is not implemented.", -1);
-        } else if ("2".equals(exp[DurationField.MONTH.getIndex()]) && CharMatcher.DIGIT.matchesAllOf(exp[DurationField.DAY_OF_MONTH.getIndex()])) {
+        } else if ("2".equals(exp[DurationField.MONTH.getIndex()]) && CharMatcher.digit().matchesAllOf(exp[DurationField.DAY_OF_MONTH.getIndex()])) {
             int dayOfMonth = Integer.parseInt(exp[DurationField.DAY_OF_MONTH.getIndex()]);
             if (dayOfMonth > 29) {
                 throw new ParseException("When month is 2, day-of-month should be in range [1, 29].", -1);

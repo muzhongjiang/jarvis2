@@ -1,11 +1,5 @@
 package com.mogujie.jarvis.worker.task;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.configuration.Configuration;
-import org.joda.time.DateTime;
-
 import com.mogujie.jarvis.core.AbstractTask;
 import com.mogujie.jarvis.core.TaskContext;
 import com.mogujie.jarvis.core.TaskContext.TaskContextBuilder;
@@ -14,10 +8,17 @@ import com.mogujie.jarvis.core.domain.TaskDetail.TaskDetailBuilder;
 import com.mogujie.jarvis.core.exception.TaskException;
 import com.mogujie.jarvis.core.util.ConfigUtils;
 import com.mogujie.jarvis.tasks.shell.JavaTask;
+import org.apache.commons.configuration.Configuration;
+import org.joda.time.DateTime;
+import org.junit.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TestJavaTask {
 
-    public static void main(String[] args) {
+    @Test
+    public void test(){
         Configuration conf = ConfigUtils.getWorkerConfig();
         conf.addProperty("hdfs.jar.root.path", "/tmp/jarvis");
         conf.addProperty("local.jar.root.path", "/Users/wuya/Desktop/tmp-jarvis");

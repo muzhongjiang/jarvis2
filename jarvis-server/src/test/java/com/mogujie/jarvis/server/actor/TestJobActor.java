@@ -279,7 +279,7 @@ public class TestJobActor extends DBTestBased {
     @After
     public void tearDown() {
         try {
-            if (!TestUtil.isPortHasBeenUse(IPUtils.getIPV4Address(), 10010)) {
+            if (!TestUtil.isPortHasBeenUse(IPUtils.getIPV4Address(), 10090)) {
                 system.terminate();
             }
         } catch (UnknownHostException e) {

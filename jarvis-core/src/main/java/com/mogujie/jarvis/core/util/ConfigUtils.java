@@ -15,6 +15,8 @@ import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
 import com.google.common.base.Throwables;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -25,6 +27,7 @@ public class ConfigUtils {
     private static PropertiesConfiguration serverConfig=null;
     private static PropertiesConfiguration logstorageConfig=null;
     private static PropertiesConfiguration restConfig=null;
+    protected static final Logger LOGGER = LogManager.getLogger();
 
     /**
      * 读取Server配置
@@ -79,10 +82,13 @@ public class ConfigUtils {
         String key = "akka.remote.netty.tcp.hostname";
         Config akkaConfig = ConfigFactory.load(fileName);
         if (akkaConfig.hasPath(key) && !akkaConfig.getString(key).isEmpty()) {
+            LOGGER.info("akka akkaConfig=="+akkaConfig);
             return akkaConfig;
         } else {
             try {
-                return ConfigFactory.parseString(key + "=" + IPUtils.getIPV4Address()).withFallback(akkaConfig);
+                String ip = IPUtils.getIPV4Address();
+                LOGGER.info("akka ip=="+ip);
+                return ConfigFactory.parseString(key + "=" + ip).withFallback(akkaConfig);
             } catch (UnknownHostException | SocketException ex) {
                 Throwables.propagate(ex);
                 return null;

@@ -1,35 +1,15 @@
 package com.mogujie.jarvis.dto.generate;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.util.Date;
 
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class AppWorkerGroup extends AppWorkerGroupKey {
     private Date createTime;
-
     private Date updateTime;
-
     private String updateUser;
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public String getUpdateUser() {
-        return updateUser;
-    }
-
-    public void setUpdateUser(String updateUser) {
-        this.updateUser = updateUser;
-    }
 }

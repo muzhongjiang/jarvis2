@@ -1,6 +1,6 @@
 package com.mogujie.jarvis.web.controller.jarvis;
 
-import com.mogu.bigdata.admin.client.annotation.Passport;
+//import com.mogu.bigdata.admin.client.annotation.Passport;
 import com.mogujie.jarvis.web.auth.conf.JarvisAuthType;
 import com.mogujie.jarvis.web.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class TriggerController {
     JobService jobService;
 
     @RequestMapping
-    @Passport(JarvisAuthType.trigger)
+//    @Passport(JarvisAuthType.trigger)
     public String index() {
         return "trigger/index";
     }
