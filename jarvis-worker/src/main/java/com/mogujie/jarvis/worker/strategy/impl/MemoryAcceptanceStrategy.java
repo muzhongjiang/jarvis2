@@ -35,10 +35,10 @@ public class MemoryAcceptanceStrategy implements AcceptanceStrategy {
     public AcceptanceResult accept(TaskDetail taskDetail) throws Exception {
         try {
             List<String> lines = Files.readLines(new File("/proc/meminfo"), StandardCharsets.UTF_8);
-            long memTotal = Long.parseLong(CharMatcher.DIGIT.retainFrom(lines.get(0)));
-            long memFree = Long.parseLong(CharMatcher.DIGIT.retainFrom(lines.get(1)));
-            long buffers = Long.parseLong(CharMatcher.DIGIT.retainFrom(lines.get(2)));
-            long cached = Long.parseLong(CharMatcher.DIGIT.retainFrom(lines.get(3)));
+            long memTotal = Long.parseLong(CharMatcher.digit().retainFrom(lines.get(0)));
+            long memFree = Long.parseLong(CharMatcher.digit().retainFrom(lines.get(1)));
+            long buffers = Long.parseLong(CharMatcher.digit().retainFrom(lines.get(2)));
+            long cached = Long.parseLong(CharMatcher.digit().retainFrom(lines.get(3)));
             double currentMemoryUsage = (memTotal - memFree - buffers - cached) / (double) memTotal;
             if (Double.isNaN(currentMemoryUsage)) {
                 currentMemoryUsage = 0;
