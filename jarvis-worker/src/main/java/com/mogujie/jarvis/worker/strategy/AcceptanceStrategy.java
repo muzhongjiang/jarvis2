@@ -11,7 +11,7 @@ package com.mogujie.jarvis.worker.strategy;
 import com.mogujie.jarvis.core.domain.TaskDetail;
 
 /**
- * @author wuya
+ * 验收策略
  *
  */
 public interface AcceptanceStrategy {

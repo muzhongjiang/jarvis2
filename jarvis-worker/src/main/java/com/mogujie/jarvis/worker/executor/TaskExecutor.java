@@ -8,12 +8,8 @@
 
 package com.mogujie.jarvis.worker.executor;
 
-import java.lang.reflect.Constructor;
-import java.util.List;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import akka.actor.ActorRef;
+import akka.actor.ActorSelection;
 import com.mogujie.jarvis.core.AbstractLogCollector;
 import com.mogujie.jarvis.core.AbstractTask;
 import com.mogujie.jarvis.core.ProgressReporter;
@@ -33,9 +29,11 @@ import com.mogujie.jarvis.worker.strategy.AcceptanceResult;
 import com.mogujie.jarvis.worker.strategy.AcceptanceStrategy;
 import com.mogujie.jarvis.worker.util.FutureUtils;
 import com.mogujie.jarvis.worker.util.TaskConfigUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import akka.actor.ActorRef;
-import akka.actor.ActorSelection;
+import java.lang.reflect.Constructor;
+import java.util.List;
 
 public class TaskExecutor extends Thread {
 
@@ -74,7 +72,11 @@ public class TaskExecutor extends Thread {
             try {
                 AcceptanceResult result = strategy.accept(taskDetail);
                 if (!result.isAccepted()) {
-                    senderActor.tell(WorkerSubmitTaskResponse.newBuilder().setAccept(false).setSuccess(true).setMessage(result.getMessage()).build(),
+                    senderActor.tell(WorkerSubmitTaskResponse.newBuilder()
+                                    .setAccept(false)
+                                    .setSuccess(true)
+                                    .setMessage(result.getMessage())
+                                    .build(),
                             selfActor);
                     LOGGER.warn("AcceptanceStrategy={} check failed.", strategy.getClass().getSimpleName());
                     return;

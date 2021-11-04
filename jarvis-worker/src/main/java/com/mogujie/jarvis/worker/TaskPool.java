@@ -8,16 +8,15 @@
 
 package com.mogujie.jarvis.worker;
 
-import java.util.Map;
-import java.util.Set;
-
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.mogujie.jarvis.core.AbstractTask;
 
+import java.util.Map;
+import java.util.Set;
+
 /**
- * @author wuya
- *
+ * 排队
  */
 public enum TaskPool {
 
